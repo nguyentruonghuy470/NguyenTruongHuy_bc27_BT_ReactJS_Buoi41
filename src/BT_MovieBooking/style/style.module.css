@@ -1,0 +1,99 @@
+.root {
+  background-color: black;
+  min-height: 100vh;
+}
+.containerMovie {
+  color: whitesmoke;
+  padding: 30px;
+}
+.movieList {
+  margin: 0 50px;
+  text-align: center;
+  flex: 1 0;
+}
+.charlist {
+  margin: 0 30px;
+}
+.charlistItem {
+  column-gap: 10px;
+  margin: 25px 0px 10px 0px;
+  align-items: center;
+  display: flex;
+}
+.charBook {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  display: inline;
+  background-color: orange;
+  border: 2px solid yellow;
+}
+.charSelect {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  display: inline;
+  background-color: #89ee64;
+  border: 2px solid yellow;
+}
+.charNullSelect {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  display: inline;
+  background-color: rgb(232 239 247);
+  border: 2px solid yellow;
+}
+.txtChar {
+  margin: 0;
+}
+.movieScreen {
+  background-color: orange;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 10px 8px 10px #888888;
+}
+
+/*  */
+
+.txtSeatListNumber {
+  color: orange;
+  text-align: center;
+  padding: 0;
+}
+.SeatListNumber {
+  width: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.SeatListItemNumber {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+/*  */
+.Seat {
+  padding: 8px;
+  width: 8% !important;
+}
+.SeatItem {
+  margin: 0;
+  padding: 10px;
+  background-color: aliceblue;
+  text-align: center;
+  border: 2px solid yellow;
+}
+
+
+/*  */
+.SeatBooking {
+  font-size: 25px;
+  font-weight: 900;
+  color: white;
+}
+.SeatInfo {
+  font-size: 25px;
+  color: yellow;
+}
