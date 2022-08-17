@@ -53,17 +53,10 @@ const SeatDetail = () => {
           })}
           <tr>
             <td className={Styles.SeatInfo}>Total: </td>
-            <td className={Styles.SeatInfo}>
+            <td className={Styles.SeatInfo} colSpan="2">
               {total}
             </td>
-            <td>
-              <button
-                className="btn btn-danger"
-                // onClick={() => RemoveAllTicket(addtoCart)}
-              >
-                X
-              </button>
-            </td>
+           
           </tr>
         </tbody>
       </table>
