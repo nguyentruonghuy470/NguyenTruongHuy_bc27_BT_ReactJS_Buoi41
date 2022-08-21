@@ -172,13 +172,15 @@ const initialStore = {
     },
   ],
   addtoCart: [],
+  isSelect: null,
 };
 
 const movieReducer = (state = initialStore, action) => {
   switch (action.type) {
     case "changeColorChair": {
+      
       console.log(action);
-      const cloneListTicket = [...state.tickets];
+      let cloneListTicket = [...state.addtoCart];
       const findIndexRow = cloneListTicket.findIndex(
         (item) => item.row === action.ticket.name.substr(0, 1)
       );
@@ -188,33 +190,29 @@ const movieReducer = (state = initialStore, action) => {
         const findIndexChair = cloneListTicket[findIndexRow].seats.findIndex(
           (item) => item.name === action.ticket.name
         );
+        
         if (findIndexChair !== -1) {
+          
           cloneListTicket[findIndexRow].seats[findIndexChair].booked =
             !cloneListTicket[findIndexRow].seats[findIndexChair].booked;
         }
+        
       }
-      return { ...state, tickets: cloneListTicket };
+      return { ...state,ticket: cloneListTicket };
     }
     case "addtoCart": {
-      // const nwCarts = [...state.addtoCart, { ...action.ticket,booked:!action.ticket.booked }];
-      //   console.log(nwCarts)
-      // return { ...state, addtoCart: nwCarts };
-
       const index = state.addtoCart.findIndex(
         (item) => item.name === action.ticket.name
       );
       console.log(index);
-      // THÊM MỚI VÀO GIỎ HÀNG VÀ SET QUANTITY LÀ 1
+
       if (index === -1) {
         // / Nếu giá trị bên trong object state là một array/object, ta cần tiếp tục tạo ra một array/object mới trước khi gán lại cho state
-        const nwCarts = [
-          ...state.addtoCart,
-          { ...action.ticket, booked: !action.ticket.booked },
-        ];
+        const nwCarts = [...state.addtoCart, { ...action.ticket }];
         console.log(nwCarts);
         return { ...state, addtoCart: nwCarts };
       }
-      //   const nwCarts = [...state.addtoCart];
+
       const nwCarts = state.addtoCart.filter(
         (seat) => seat.name !== action.ticket.name
       );
@@ -226,7 +224,8 @@ const movieReducer = (state = initialStore, action) => {
       );
       return { ...state, addtoCart: nwCarts };
     }
-    
+    case "resetSelect":
+      return { ...state, isSelect: null };
     default:
       return state;
   }

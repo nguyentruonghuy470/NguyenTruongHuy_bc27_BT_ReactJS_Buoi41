@@ -1,4 +1,4 @@
-import React,{ useEffect } from "react";
+import React, { useEffect } from "react";
 import Styles from "../style/style.module.css";
 import SeatList from "./SeatList";
 import SeatDetail from "./SeatDetail";
@@ -11,8 +11,8 @@ const MoiveBooking = () => {
             <h1 className="text-center">ĐẶT VÉ XEM PHIM TẠI CYBERLEARN.VN</h1>
             <h3 className="text-center"> Màn hình </h3>
             <p className={Styles.movieScreen}></p>
-            
-              <SeatList/>
+
+            <SeatList />
           </div>
           <div className={Styles.movieList}>
             <div className="text-center">
@@ -32,7 +32,7 @@ const MoiveBooking = () => {
                 <p className={Styles.txtChar}>Ghế chưa đặt</p>
               </div>
             </div>
-            <SeatDetail/>
+            <SeatDetail />
           </div>
         </div>
       </div>
