@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 
-import "../style/style.css"
+import "../style/style.css";
 import Styles from "../style/style.module.css";
 import { useSelector, useDispatch } from "react-redux";
 const SeatList = () => {
@@ -9,12 +9,11 @@ const SeatList = () => {
 
   const AddTicket = (ticket) => {
     dispatch({ type: "addtoCart", ticket });
-    
+    dispatch({ type: "changeColorChair", ticket });
   };
   const ChangeChair = (ticket) => {
-    dispatch({ type: "changeColorChair", ticket });
-  }
-
+    
+  };
 
   const { tickets } = useSelector((state) => state.cart);
   const listRank = tickets.map((product) => {
@@ -27,10 +26,14 @@ const SeatList = () => {
   const listSeat = tickets.map((a) => {
     return a.seats.map((i) => {
       return (
-        <div key={i.name} className={Styles.Seat} onClick={() => {AddTicket(i)
-          ChangeChair(i)}}>
-          <h5  className={cn(Styles.SeatItem, { "SeatSl": i.booked}
-          )}>
+        <div
+          key={i.name}
+          className={Styles.Seat}
+          onClick={() => {
+            AddTicket(i);
+          }}
+        >
+          <h5 className={cn(Styles.SeatItem, { SeatSl: i.booked })}>
             {i.name}
           </h5>
         </div>

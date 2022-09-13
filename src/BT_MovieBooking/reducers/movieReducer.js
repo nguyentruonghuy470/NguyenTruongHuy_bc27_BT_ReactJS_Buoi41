@@ -177,10 +177,9 @@ const initialStore = {
 
 const movieReducer = (state = initialStore, action) => {
   switch (action.type) {
-    case "changeColorChair": {
-      
+    case "changeColorChair": {  
       console.log(action);
-      let cloneListTicket = [...state.addtoCart];
+      const cloneListTicket = [...state.tickets];
       const findIndexRow = cloneListTicket.findIndex(
         (item) => item.row === action.ticket.name.substr(0, 1)
       );
@@ -192,13 +191,12 @@ const movieReducer = (state = initialStore, action) => {
         );
         
         if (findIndexChair !== -1) {
-          
           cloneListTicket[findIndexRow].seats[findIndexChair].booked =
             !cloneListTicket[findIndexRow].seats[findIndexChair].booked;
         }
         
       }
-      return { ...state,ticket: cloneListTicket };
+      return { ...state,tickets: cloneListTicket };
     }
     case "addtoCart": {
       const index = state.addtoCart.findIndex(
